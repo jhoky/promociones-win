@@ -12,6 +12,19 @@ footer{
     color: white;
 }
 
+.swiper {
+    width: 600px;
+    height: 300px;
+    
+  }
+
+  @media screen and (max-width: 767px) {
+    .swiper{
+      width: 100%;
+      display: flex;
+    justify-content: center;
+    }
+  }
 .cuerpo-footer{
     height: 100px;
     display: flex;
@@ -235,7 +248,7 @@ img{
     border-radius: 25px;
     padding: 20px;
     width: 300px;
-    margin: 20px 20px;
+    margin: auto;
 }
 
 .beneficio-titulo{
