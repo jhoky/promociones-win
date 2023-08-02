@@ -1,0 +1,290 @@
+body{
+    background-color: #f7f8fa;
+    font-size: 16px;
+}
+
+header{
+    height: 100px;
+}
+
+footer{
+    background-color: #381c1c;
+    color: white;
+}
+
+.cuerpo-footer{
+    height: 100px;
+    display: flex;
+    align-items: center;   
+    text-align: center;
+}
+
+.txt-footer{
+    width: 100%;
+    text-align: center;
+}
+
+img{
+    height: 100%;
+    width: 100%;
+}
+
+.contenido-titulo{
+    height: 600px;
+}
+
+
+.slide-promociones{
+    height: 400px;
+}
+
+.logo-head{
+    margin-left: 10%;
+    display: flex;
+    height: 100%;
+    float: left;
+}
+
+.numero-head{
+    padding-top: 10px;
+    list-style: none;
+    margin-right: 10%;
+    display: flex;
+    height: 100%;
+    float: right;
+}
+
+.numero-head-description{
+    list-style: none;
+}
+
+.planes{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.titulo{
+
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    color: #FF5A0A;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.titulo-descripcion{
+    padding: 0 50px;
+    text-align: center;
+    margin: 0 auto;
+    justify-content: center;
+    font-size: larger;
+}
+
+.planes-paquetes{
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    border: 1px solid #FF5A0A;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 0 2%;
+    margin: 0 1%;
+    background-color: #ff5a0a;
+    font-size: larger;
+}
+
+.planes-paquetes-duos{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.paquetes-duos{
+    border: 1px solid #FF5A0A;
+    margin-top: 20px;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.planes-paquetes-trios{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.paquetes-trios{
+    border: 1px solid #FF5A0A;
+    margin-top: 20px;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.paquetes {
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    border: 1px solid #FF5A0A;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 0 2%;
+    margin: 0 1%;
+    background-color: #ff5a0a;
+    font-size: larger;
+}
+
+
+.paquetes-internet{
+    width: auto;
+    
+}
+
+.nouso{
+    overflow-x: scroll; 
+}
+
+.carouselExampleIndicators{
+    width: 400px;
+}
+
+.plan-paquete{
+    margin: 0 10px;
+    border-radius: 5px;
+    border: 1px solid #FF5A0A;
+    width: auto;
+    padding-bottom: 20px;
+    height: auto;
+}
+
+.item-select{
+    color: #FF5A0A;
+    background-color: white;
+    border: 3px solid #FF5A0A;
+}
+
+.head-plan-paquete{
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    background-color: black;
+    font-size: small;
+    color: white;
+    padding: 2px 10px;
+}
+
+.plan-descripcion{
+    padding: 10px 0;
+    font-size: large;
+    width: 100%;
+    color: #FF5A0A;
+    font-weight: bold;
+    text-align: center;
+}
+
+.internet-promocion{
+    font-size: x-large;
+    width: 100%;
+    color: #FF5A0A;
+    font-weight: bold;
+    text-align: center;
+}
+
+.internet-normal{
+    color: rgb(53, 53, 53);
+    text-align: center;
+}
+
+.promocion{
+    padding: 2px;
+    text-align: center;
+
+}
+
+.paquetes{
+    justify-content: center;
+}
+
+.paquetes-precio{
+    justify-content: center;
+    font-size: 1.5em;
+}
+
+.costo-instalacion{
+    color: rgb(138, 124, 124);
+    text-align: center;
+    font-size: 12px;
+}
+
+.paquete-precio-normal{
+    font-size: 12px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.beneficios{
+    justify-content: center;
+    display: flex;
+}
+.beneficio{
+    border: 1px solid rgb(184, 178, 178);
+    border-radius: 25px;
+    padding: 20px;
+    width: 300px;
+    margin: 20px 20px;
+}
+
+.beneficio-titulo{
+    font-weight: bold;
+}
+.beneficio-descripcion{
+    text-align: center;
+}
+
+.logo{
+    justify-content: center;
+    align-content: center;
+    display: flex;
+}
+
+.cuerpo-logo-mesh{
+    justify-content: center;
+    align-content: center;
+}
+
+.logo-mesh{    
+    text-align: center;
+    width: 30%;
+    height: 50px;
+}
+
+.logo-beneficio1{
+    text-align: center;
+    width: 50%;
+    height: 70px;
+}
+
+.logo-beneficio2{
+    text-align: center;
+    width: 20%;
+    height: 70px;
+}
+
+.logo-beneficio3{
+    text-align: center;
+    width: 30%;
+    height: 70px;
+}
+
+.logo-beneficio4{
+    text-align: center;
+    width: 30%;
+    height: 70px;
+}
+
+
+
