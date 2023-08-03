@@ -29,9 +29,12 @@ $(".planes-paquetes").on("click", function() {
 document.addEventListener("DOMContentLoaded", function() {
   // Función para detectar el tamaño de la pantalla
   function detectarPantalla() {
+    var imageUrl;
     if (window.innerWidth <= 767) {
       // Si el ancho de la pantalla es menor o igual a 767px (dispositivos móviles), eliminar la clase
       
+      imageUrl = "img/header-win-movil.png";
+
       $('.contenedor-swiper').addClass('swiper-slide');
       $('.swiper-wrapper').removeClass('planes');
       $('.swiper-wrapper').removeClass('beneficios');
@@ -42,12 +45,14 @@ document.addEventListener("DOMContentLoaded", function() {
           el: '.swiper-pagination',
         },
       });
+      $("#img-cabeza").attr("src", imageUrl);
     } else {
+      imageUrl = "img/header-win.png";
       // Si el ancho de la pantalla es mayor a 767px (pantallas más grandes), agregar la clase
       $('.contenedor-swiper').removeClass('swiper-slide');
       $('.swiper-wrapper').addClass('planes');
       $('.swiper-wrapper').addClass('beneficios');
-      
+      $("#img-cabeza").attr("src", imageUrl);
     }
   }
 

@@ -1,0 +1,40 @@
+.modal-title{
+    float: left;
+}
+
+.modal-cuerpo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-close{
+    float: right;
+}
+
+.texto-datos{
+    display: flex;
+    justify-content: center;
+}
+
+.datos-cli{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.img-modal{
+    width: 40%;
+}
+
+.modal-content{
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.boton-modal{
+    background-color: #ff5c0c;
+    font-weight: bold;
+    size: 20px;
+    color: white;
+    border-radius:20px;
+}
