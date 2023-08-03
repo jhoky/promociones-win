@@ -16,31 +16,45 @@ $(".planes-paquetes").on("click", function() {
         $('.planes-paquetes-trios').attr('hidden', true);
     }
   });
+
+  /*
   $(".paquetes").on("click", function() { 
     var plan = $(this).val();
     var url = "https://api.whatsapp.com/send?phone=+51933944120&text=Hola, quiero solicitar el plan de "+plan;
     window.open(url, "_blank");
   });
-
-
-
+  */
 });
 
-const swiper = new Swiper('.swiper', {
+document.addEventListener("DOMContentLoaded", function() {
+  // Función para detectar el tamaño de la pantalla
+  function detectarPantalla() {
+    if (window.innerWidth <= 767) {
+      // Si el ancho de la pantalla es menor o igual a 767px (dispositivos móviles), eliminar la clase
+      
+      $('.contenedor-swiper').addClass('swiper-slide');
+      $('.swiper-wrapper').removeClass('planes');
+      $('.swiper-wrapper').removeClass('beneficios');
+      const swiper = new Swiper('.swiper', {
 
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-  },
+        // If we need pagination
+        pagination: {
+          el: '.swiper-pagination',
+        },
+      });
+    } else {
+      // Si el ancho de la pantalla es mayor a 767px (pantallas más grandes), agregar la clase
+      $('.contenedor-swiper').removeClass('swiper-slide');
+      $('.swiper-wrapper').addClass('planes');
+      $('.swiper-wrapper').addClass('beneficios');
+      
+    }
+  }
 
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
+  // Ejecutar la función al cargar la página
+  detectarPantalla();
 
-  // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
+  // Agregar un listener para detectar cambios en el tamaño de la pantalla y volver a ejecutar la función si es necesario
+  window.addEventListener('resize', detectarPantalla);
 });
+
