@@ -7,6 +7,11 @@ body {
     height: auto;
 }
 
+a{
+    text-decoration: none;
+    color: black;
+    
+}
 header {
     height: 9%;
 }
@@ -22,6 +27,10 @@ footer {
 
 }
 
+
+.head-plan-paquete{
+    font-weight: bold;
+}
 
 @media only  screen and (max-width: 767px) {
 
@@ -72,6 +81,8 @@ footer {
     float: right;
 }
 
+
+
 .cuerpo-footer {
     height: 100px;
     display: flex;
@@ -82,6 +93,17 @@ footer {
 .txt-footer {
     width: 100%;
     text-align: center;
+}
+
+.logo-plan-duo{
+    text-align: center;
+    justify-content: center;
+}
+
+.logo-duo{
+    width: 50%;
+    height: 60px;
+    padding-bottom: 5px;
 }
 
 img {
@@ -219,6 +241,29 @@ img {
     border: 3px solid #FF5A0A;
 }
 
+.item-select-paquetes-duos{
+    color: #FF5A0A;
+    font-weight: bold;
+}
+
+.beneficio-solicitar{
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.cuerpo-logo-beneficio-solicitar{
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 50px;
+}
+
+.item-select-paquetes-trios{
+    color: #FF5A0A;
+    font-weight: bold;
+}
+
 .head-plan-paquete {
     text-align: center;
     width: 100%;
@@ -309,6 +354,7 @@ img {
 }
 
 .cuerpo-logo-mesh {
+    height: 55px;
     justify-content: center;
     align-content: center;
 }

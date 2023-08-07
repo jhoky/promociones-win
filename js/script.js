@@ -7,40 +7,96 @@ $(".planes-paquetes").on("click", function() {
     if($(this).html().trim() === "DÚOS"){
         $('.planes-paquetes-duos').removeAttr('hidden');
         $('.planes-paquetes-trios').attr('hidden', true);
-        console.log($(this).html());
+
+        $('.planduo1').removeAttr('hidden');
+        $('.planinternet').attr('hidden', true);
+        $('.planduo2').attr('hidden', true);
+        $('.planduo3').attr('hidden', true);
+        $('.plantrio1').attr('hidden', true);
+        $('.plantrio2').attr('hidden', true);
+        
     }else if($(this).html().trim() === "TRIOS"){
         $('.planes-paquetes-trios').removeAttr('hidden');
         $('.planes-paquetes-duos').attr('hidden', true);
+
+
+        $('.plantrio1').removeAttr('hidden');
+        $('.planinternet').attr('hidden', true);
+        $('.planduo1').attr('hidden', true);
+        $('.planduo2').attr('hidden', true);
+        $('.planduo3').attr('hidden', true);
+        $('.plantrio2').attr('hidden', true);
+
     }else if($(this).html().trim() === "INTERNET"){
         $('.planes-paquetes-duos').attr('hidden', true);
         $('.planes-paquetes-trios').attr('hidden', true);
-    }
-  });
 
+
+        $('.planinternet').removeAttr('hidden');
+        $('.planduo1').attr('hidden', true);
+        $('.planduo2').attr('hidden', true);
+        $('.planduo3').attr('hidden', true);
+        $('.plantrio1').attr('hidden', true);
+        $('.plantrio2').attr('hidden', true);
+    }
+
+    
+    
+  });
   /*
   $(".paquetes").on("click", function() { 
     var plan = $(this).val();
-    var url = "https://api.whatsapp.com/send?phone=+51933944120&text=Hola, quiero solicitar el plan de "+plan;
+    var url = "https://api.whatsapp.com/send?phone=+51933944120&text=Hola, quiero solicitar más información sobre los planes de win";
     window.open(url, "_blank");
   });
   */
 });
 
+$(".paquetes-duos").on("click", function() {
+  $(this).addClass("item-select-paquetes-duos");
+  $(".paquetes-duos").not(this).removeClass("item-select-paquetes-duos");
+  
+  
+  if($(this).html().trim() === "INTERNET + WINTV"){
+    $('.planduo1').removeAttr('hidden');
+    $('.planduo2').attr('hidden', true);
+    $('.planduo3').attr('hidden', true);
+  }else if($(this).html().trim() === "INTERNET + DGO"){
+    $('.planduo1').attr('hidden', true);
+    $('.planduo2').removeAttr('hidden');
+    $('.planduo3').attr('hidden', true);
+  }else if($(this).html().trim() === "INTERNET + FONOWIN"){
+    $('.planduo1').attr('hidden', true);
+    $('.planduo2').attr('hidden', true);
+    $('.planduo3').removeAttr('hidden');
+  }
+});
+
+$(".paquetes-trios").on("click", function() {
+  $(this).addClass("item-select-paquetes-trios");
+  $(".paquetes-trios").not(this).removeClass("item-select-paquetes-trios");
+  
+  
+  if($(this).html().trim() === "INTERNET + WINTV + FONO WIN"){
+    $('.plantrio1').removeAttr('hidden');
+    $('.plantrio2').attr('hidden', true);
+  }else if($(this).html().trim() === "INTERNET + DGO + FONO WIN"){
+    $('.plantrio1').attr('hidden', true);
+    $('.plantrio2').removeAttr('hidden');
+  }
+});
+
+
 document.addEventListener("DOMContentLoaded", function() {
-  // Función para detectar el tamaño de la pantalla
   function detectarPantalla() {
     var imageUrl;
     if (window.innerWidth <= 767) {
-      // Si el ancho de la pantalla es menor o igual a 767px (dispositivos móviles), eliminar la clase
-      
       imageUrl = "img/header-win-movil.png";
 
       $('.contenedor-swiper').addClass('swiper-slide');
       $('.swiper-wrapper').removeClass('planes');
       $('.swiper-wrapper').removeClass('beneficios');
       const swiper = new Swiper('.swiper', {
-
-        // If we need pagination
         pagination: {
           el: '.swiper-pagination',
         },
@@ -48,18 +104,16 @@ document.addEventListener("DOMContentLoaded", function() {
       $("#img-cabeza").attr("src", imageUrl);
     } else {
       imageUrl = "img/header-win.png";
-      // Si el ancho de la pantalla es mayor a 767px (pantallas más grandes), agregar la clase
       $('.contenedor-swiper').removeClass('swiper-slide');
       $('.swiper-wrapper').addClass('planes');
       $('.swiper-wrapper').addClass('beneficios');
       $("#img-cabeza").attr("src", imageUrl);
     }
   }
-
-  // Ejecutar la función al cargar la página
   detectarPantalla();
-
-  // Agregar un listener para detectar cambios en el tamaño de la pantalla y volver a ejecutar la función si es necesario
   window.addEventListener('resize', detectarPantalla);
 });
 
+function enviarsolicitudplan(){
+
+}
