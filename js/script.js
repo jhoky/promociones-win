@@ -1,4 +1,27 @@
+let plan;
+let dniValue;
+let celularValue;
+let fechavalue;
+let planvalue;
+
+window.onload = function(){
+  var fecha = new Date(); 
+  var mes = fecha.getMonth()+1; 
+  var dia = fecha.getDate(); 
+  var ano = fecha.getFullYear(); 
+  if(dia<10)
+    dia='0'+dia;
+  if(mes<10)
+    mes='0'+mes 
+  fechavalue=ano+"-"+mes+"-"+dia;
+
+}
+
+
 $(document).ready(function() {
+
+
+      
 $(".planes-paquetes").on("click", function() {
     $(this).addClass("item-select");
     $(".planes-paquetes").not(this).removeClass("item-select");
@@ -43,13 +66,12 @@ $(".planes-paquetes").on("click", function() {
     
     
   });
-  /*
-  $(".paquetes").on("click", function() { 
+  
+  $(".btn-wsp").on("click", function() { 
     var plan = $(this).val();
     var url = "https://api.whatsapp.com/send?phone=+51933944120&text=Hola, quiero solicitar más información sobre los planes de win";
     window.open(url, "_blank");
   });
-  */
 });
 
 $(".paquetes-duos").on("click", function() {
@@ -112,8 +134,86 @@ document.addEventListener("DOMContentLoaded", function() {
   }
   detectarPantalla();
   window.addEventListener('resize', detectarPantalla);
+
+
+  const paquetesBotones = document.querySelectorAll(".paquetes.paquetes-precio");
+  const modal = new bootstrap.Modal(document.getElementById("staticBackdrop"));
+
+  paquetesBotones.forEach(function(botones) {
+    botones.addEventListener("click", function() {
+      const value = this.value;
+      plan = value;
+      document.getElementById("dni").value = "";
+      document.getElementById("celular").value = "";
+    });
+  });
+
+
+
+  const continuarBtn = document.getElementById("continuarBtn");
+
+  continuarBtn.addEventListener("click", function() {
+    dniValue = document.getElementById("dni").value;
+    celularValue = document.getElementById("celular").value;
+    if (dniValue.trim() === "") {
+      document.getElementById("dni").required = true;
+      return; 
+    }
+    if (celularValue.trim() === "") {
+      document.getElementById("celular").required = true;
+      return; 
+    }
+    iniciarformular();
+
+    modal.hide();
+  });
+
+
+
+  
 });
+
+
+
+function iniciarformular(){
+  
+  
+  const palabra = plan;
+  const partes = palabra.split("-");
+  
+  const reemplazos = {
+    "duo1": "+wintv",
+    "duo2": "+dgo",
+    "duo3": "+fonowin",
+    "trio1": "+wintv+fonowin",
+    "trio2": "+dgo+fonowin"
+  };
+  if(partes.length>1){
+    if (reemplazos.hasOwnProperty(partes[1])) {
+      partes[1] = reemplazos[partes[1]];
+    }
+    planvalue = partes[0]+partes[1];
+  }else{
+    planvalue = partes[0];
+  }
+  
+  enviarsolicitudplan();
+  
+}
 
 function enviarsolicitudplan(){
 
+  $.ajax({
+    url: "http://localhost:8080/winpromociones/" + dniValue + "/" + celularValue+"/"+fechavalue+"/"+planvalue,
+    method: "POST",
+    contentType: "application/json",
+    dataType: "Content-Type"
+  }).done(function(result) {
+    var resultList = JSON.parse(result);
+       
+    alert("Enviado. Gracias por la preferencia");
+  }).fail(function(textStatus) {
+    alert("ocurrió un error");
+    console.log(textStatus);
+  });
 }

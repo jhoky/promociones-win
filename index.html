@@ -1040,7 +1040,7 @@
       <div class="modal-content">
         <div class="modal-cabezal">
         <h5 class="modal-title" id="staticBackdropLabel"></h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close" onclick="cerrarmodal();" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <br>
         <div >
@@ -1048,12 +1048,12 @@
           <img class="img-modal" src="img/win-img001-modal.png">
         </div>
           <label class="texto-datos"> Ingresa tus datos para continuar</label>
-          <input type="text" class="datos-cli form-control" placeholder="DNI/CEX/RUC">
-          <input type="tel" class="datos-cli form-control" placeholder="Número de celular">
+          <input type="text" id="dni" required class="datos-cli form-control" placeholder="DNI/CEX/RUC" title="Este campo es requerido">
+          <input type="tel" id="celular" required class="datos-cli form-control" placeholder="Número de celular" title="Este campo es requerido">
 
         </div>
-          <button type="button" class="btn boton-modal">CONTINUAR</button>
-          <button type="button" class="btn boton-modal">CONTINUAR</button>
+          <button type="button" id="continuarBtn"  class="btn boton-modal">CONTINUAR</button>
+          <button type="button" class=" btn btn-wsp">ENVÍANOS UN MENSAJE</button>
 
       </div>
     </div>
