@@ -207,10 +207,10 @@ function enviarsolicitudplan(){
     url: "http://localhost:8080/winpromociones/" + dniValue + "/" + celularValue+"/"+fechavalue+"/"+planvalue,
     method: "POST",
     contentType: "application/json",
-    dataType: "Content-Type"
+    dataType: "json"
   }).done(function(result) {
     var resultList = JSON.parse(result);
-       
+    console.log(resultList);
     alert("Enviado. Gracias por la preferencia");
   }).fail(function(textStatus) {
     alert("ocurrió un error");
