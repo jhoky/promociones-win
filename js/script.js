@@ -209,8 +209,8 @@ function enviarsolicitudplan(){
     contentType: "application/json",
     dataType: "json"
   }).done(function(result) {
+    console.log(resut);
     var resultList = JSON.parse(result);
-    console.log(resultList);
     alert("Enviado. Gracias por la preferencia");
   }).fail(function(textStatus) {
     alert("ocurrió un error");
