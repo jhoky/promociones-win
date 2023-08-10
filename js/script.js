@@ -204,7 +204,7 @@ function iniciarformular(){
 function enviarsolicitudplan(){
 
   $.ajax({
-    url: "localhost:8080/winpromociones/" + dniValue + "/" + celularValue+"/"+fechavalue+"/"+planvalue,
+    url: "http://localhost:8080/winpromociones/" + dniValue + "/" + celularValue+"/"+fechavalue+"/"+planvalue,
     method: "POST",
     contentType: "application/json",
     dataType: "Content-Type"
