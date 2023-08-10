@@ -206,14 +206,11 @@ function enviarsolicitudplan(){
   $.ajax({
     url: "http://localhost:8080/winpromociones/" + dniValue + "/" + celularValue+"/"+fechavalue+"/"+planvalue,
     method: "POST",
-    contentType: "application/json",
-    dataType: "json"
+    contentType: "application/json"
   }).done(function(result) {
-    console.log(resut);
-    var resultList = JSON.parse(result);
     alert("Enviado. Gracias por la preferencia");
   }).fail(function(textStatus) {
-    alert("ocurrió un error");
+    alert("Lo sentimos, Estamos teniendo problemas.");
     console.log(textStatus);
   });
 }
